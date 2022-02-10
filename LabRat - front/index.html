@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>LabRats v0.1</title>
+
+	<meta charset="UTF-8">
+	<meta autor="El benévolo señor Arciniegas">
+
+	<style type="text/css">
+		#simulador{
+			border-width: 5px;
+			border-style: outset;
+			border-color: #b9b9b9;
+		}
+		.icono{
+			display: none;
+		}
+		.logo {
+		  width: 60%;
+		}
+	</style>
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="mensaje.css">
+	<script type="text/javascript" src="mensaje.js"></script>
+</head>
+<body>
+	<!-- mensajitooooo alert o como se llame-->
+        <div id="mensaje" class="ibox text-white  mensaje" >	 
+            <div class="ibox-content box">	  	
+                <img id="mensaje-avatar" src="" class="mensaje-avatar" alt="avatar">
+                <div >
+                    <h3 id="mensaje-titulo" class="mensaje-title">Narf!</h3>
+                    <p id="mensaje-cuerpo" class="mensaje-text">Cargando Datos</p>
+                </div>
+            </div>
+        </div>
+
+
+
+	<header class="w3-row w3-black" style="margin-bottom: 10px">
+	  <div class="w3-col s12 m5">
+		<img src="splashFondo.png" class="logo" >
+	  </div>
+	  <div class="w3-col s12 m7 ">
+		<h2>¡Inténtalo!</h2>
+		<h6>Cambia las coordenadas del ratón y del queso y diviértete observando</h6>
+		<form id="trainer">
+			<div class="w3-row-padding">
+			  <div class="w3-third">
+			    <label>🐭</label>
+				<input class="w3-round-xxlarge" type="number" name="x1" min="0" max="11" value="0">
+				<input class="w3-round-xxlarge" type="number" name="y1" min="0" max="11" value="0">
+			  </div>
+			  <div class="w3-third">
+			    <label>🧀</label>
+				<input class="w3-round-xxlarge" type="number" name="x2" min="0" max="11" value="0">
+				<input class="w3-round-xxlarge" type="number" name="y2" min="0" max="11" value="0">
+			  </div>
+			  <div class="w3-third">
+			    <a class="w3-button w3-amber w3-hover-orange w3-tiny w3-round-xxlarge" href="javascript:preSelect()">▶</a>
+			  </div>
+			</div>
+		</form>
+	  </div>
+	</header>
+	<div class="w3-container">
+		<div class="w3-row">
+			<div class="w3-col l5 s12">
+				<img class="icono" src="rata.png" id="rata" width="30" height="30" >
+				<img class="icono" src="queso.png" id="queso" width="30" height="30" >
+				<canvas id="simulador" width="360" height="360"></canvas>
+				<div>
+					<!--<a href="javascript:cambiarVel('1000')">0.5</a>
+					<a href="javascript:cambiarVel('500')">1</a>
+					<a href="javascript:cambiarVel('250')">2</a>
+					<a href="javascript:cambiarVel('100')">5</a>
+					<a href="javascript:cambiarVel('50')">10</a>-->
+				</div>
+				<hr>
+
+			</div>
+			<div class="w3-col l7 s12">
+				<div class="w3-responsive" style="max-height: 360px; overflow-y: scroll; margin-bottom:15px;">
+					<h2>🐭(<span id="x1"></span>,<span id="y1"></span>)  🧀(<span id="x2"></span>,<span id="y2"></span>)</h2>
+					<table class="w3-table w3-bordered w3-hoverable">
+						<th>Algoritmo de búsqueda</th>
+						<th>Pasos de búsqueda <span class="w3-badge w3-amber">&nbsp</span></th>
+						<th>Pasos de solución <span class="w3-badge w3-deep-orange">&nbsp</span></th>
+						<tbody id="infoBody">
+						</tbody>
+					</table>
+				</div>
+				<a href="javascript:mostrarRandom()" class="w3-btn w3-amber">Ver otro</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script  src="https://code.jquery.com/jquery-3.4.0.min.js"  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="canvas.js"></script>
+<script type="text/javascript" src="Ajax.js"></script>
+<script type="text/javascript" src="HtmlBuilder.js"></script>
+<script type="text/javascript" src="ViewManager.js"></script>
+<script type="text/javascript">
+	preList();
+	crearCaja(12,12);
+</script>
+</html>
